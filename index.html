@@ -66,16 +66,18 @@
             width: 100%;
             min-height: 1800px;
             border-radius: 16px;
-            overflow: auto;
+            overflow: hidden;
             -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
         }
 
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            overflow: auto;
-            min-height: 1800px;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
         }
 
         /* Add responsive height adjustment for mobile devices */
@@ -83,6 +85,14 @@
             .iframe-wrapper,
             iframe {
                 min-height: 6000px;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-y;
+                pointer-events: auto;
+            }
+
+            body {
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
         }
 
